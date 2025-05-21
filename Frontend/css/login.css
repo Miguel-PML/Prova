@@ -4,27 +4,43 @@
             border: 2px solid #ffffff;
             position: relative;
             margin: 20px;
-            background-color: rgb(164, 148, 148);
-}
-    #resp {
-        width: 200px;
-            height: 40px;
-            border: 2px solid #000000;
+            background-color: rgb(33, 38, 59);
+            left: 400px;
+            top: 80px;
             position: relative;
-            margin: 5px;
-            background-color: rgb(0, 0, 0);
-            border-radius: 20px;
 }
-    p {
+
+    input {
+        left: 60px;
+        width: 260px;
+        height: 40px;
+        border: 2px solid #000000;
+        position: relative;
+        margin: 5px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 20px;
         text-align: center;
         color: azure;
     }
 
     body{
-        background-color: #131111;
+        background-image:url(../IMG/fumaça2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     }
+
     h1{
+        position: relative;
+        left: 100px;
+        top: 40px;
         color: white;
+    }
+
+    h2{
+        color: white;
+        position: relative;
+        left: 45px;
     }
     
     ul{
@@ -41,10 +57,12 @@
     margin-top: 20px;
     color: azure;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
     position: absolute;
+    left: 93px;
+    top: 125px;
 }
 
     button:hover{
