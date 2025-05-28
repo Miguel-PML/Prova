@@ -1,0 +1,23 @@
+#box{
+    width: 1000px;
+    height: 1000px;
+    border: 2px solid #000000;
+    position: relative;
+    margin: 20px;
+    background-color: white;
+    left: auto;
+    top: auto;
+
+}
+
+input {
+    font-size: 150%;
+    width: 1000px;
+    height: 500px;
+    border: 2px solid #000000;
+    position: relative;
+    margin: 20px;
+    background-color: white;
+    left: auto;
+    top: auto;
+}
