@@ -4,9 +4,11 @@ ul{
     overflow: hidden;
     border-radius: 5px;
   }
+
   li{
     float: left;
 }
+
   li a{
     display: block;
     color: white;
@@ -14,4 +16,37 @@ ul{
     text-decoration: none;
     text-align: center;
     
+  }
+
+  li.b {
+    position: relative;
+    left: 1150px;
+  }
+
+  li.c {
+    position: relative;
+    left: 1180px;
+
+  }
+  
+
+  input{
+    top: 4.5px;
+      left: 100px;
+        width: 500px;
+        height: 40px;
+        border: 3px solid #370000;
+        position: relative;
+        margin: 6px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+  }
+
+  label{
+    position: absolute;
+    left: 8.5cm;
+    top: 0.95cm;
+    color: white;
   }
