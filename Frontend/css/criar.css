@@ -1,19 +1,27 @@
-#box{
-    width: 1000px;
-    height: 1000px;
-    border: 2px solid #000000;
-    position: relative;
-    margin: 20px;
-    background-color: white;
-    left: auto;
-    top: auto;
+label,
+textarea {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
 
+textarea {
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  box-shadow: 1px 1px 1px #414141;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
 }
 
 input {
     font-size: 150%;
     width: 1000px;
-    height: 500px;
+    height: 660px;
     border: 2px solid #000000;
     position: relative;
     margin: 20px;
@@ -21,3 +29,4 @@ input {
     left: auto;
     top: auto;
 }
+
