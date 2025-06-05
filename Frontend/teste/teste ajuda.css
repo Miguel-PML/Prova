@@ -1,0 +1,10 @@
+body {
+    background-color: black;
+}
+
+h1{
+    color: white;
+    zoom: 150%;
+    top: 250px;
+    left: 250px;
+}

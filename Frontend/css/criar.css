@@ -1,32 +1,221 @@
-label,
-textarea {
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+/* Variáveis CSS para cores do tema */
+:root {
+    /* Cores para o modo claro (padrão) */
+    --body-bg: #ece9dc;
+    --text-color: #333;
+    --header-bg: #61abab; /* Verde do tema anterior */
+    --header-text-color: white;
+    --header-shadow: rgba(0, 0, 0, 0.1);
+    --section-bg: white;
+    --section-shadow: rgba(0, 0, 0, 0.1);
+    --editor-border: #000000;
+    --editor-shadow: #414141;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --footer-bg: #333;
+    --footer-text-color: white;
+    --select-border: #ddd;
 }
 
-textarea {
-  padding: 10px;
-  max-width: 100%;
-  line-height: 1.5;
-  border-radius: 5px;
-  border: 1px solid #000000;
-  box-shadow: 1px 1px 1px #414141;
+/* Cores para o modo escuro */
+body.dark-mode {
+    --body-bg: #1a1a1a; /* Sua cor de fundo escura */
+    --text-color: #e0e0e0; /* Texto claro para fundo escuro */
+    --header-bg: #6a1b9a; /* Cor para o header no modo escuro */
+    --header-text-color: rgb(211, 203, 254); /* Sua cor de texto para header escuro */
+    --header-shadow: rgba(255, 237, 237, 0.1); /* Sua sombra para header escuro */
+    --section-bg: #2d265e; /* Fundo mais escuro para as seções */
+    --section-shadow: rgba(0, 0, 0, 0.3);
+    --editor-border: #888;
+    --editor-shadow: #2a2253;
+    --button-bg: #8c73d9; /* Botão mais claro para o modo escuro */
+    --button-hover-bg: #a894e6;
+    --footer-bg: #1a153b;
+    --footer-text-color: #c9c1f0;
+    --select-border: #664caf;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg); /* Usa a variável CSS */
+    color: var(--text-color); /* Usa a variável CSS */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+header {
+    background-color: var(--header-bg); /* Usa a variável CSS */
+    color: var(--header-text-color); /* Usa a variável CSS */
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--header-shadow); /* Usa a variável CSS */
+    position: relative; /* Para posicionar o botão de tema */
+}
+
+header h1 {
+    margin: 0; /* Remove margem padrão do h1 */
+}
+
+/* Estilo do botão de alternar tema */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute; /* Posiciona o botão de forma absoluta */
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    color: var(--header-text-color); /* Usa a cor do texto do header */
+    padding: 5px; /* Adiciona um padding para facilitar o clique */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Um leve highlight ao passar o mouse */
+}
+
+.icon-dark {
+    display: none; /* Esconde o ícone de lua por padrão */
+}
+
+body.dark-mode .icon-dark {
+    display: inline; /* Mostra o ícone de lua no modo escuro */
+}
+
+body.dark-mode .icon-light {
+    display: none; /* Esconde o ícone de sol no modo escuro */
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+section {
+    background-color: var(--section-bg); /* Usa a variável CSS */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--section-shadow); /* Usa a variável CSS */
+    flex: 1;
+    min-width: 300px;
+    max-width: 800px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+/* Estilos do Editor */
+.editor-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Para que os controles quebrem em telas pequenas */
+}
+
+#font-selector, #font-size-selector { /* Incluído font-size-selector aqui */
+    padding: 8px;
+    border: 1px solid var(--select-border); /* Usa a variável CSS */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--section-bg); /* Fundo igual à seção */
+    color: var(--text-color); /* Cor do texto igual ao padrão */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ajustes para o novo editor contenteditable */
+.story-editor-contenteditable {
+    min-height: 300px;
+    padding: 10px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid var(--editor-border); /* Usa a variável CSS */
+    box-shadow: 1px 1px 1px var(--editor-shadow); /* Usa a variável CSS */
+    font-size: 1rem;
+    outline: none;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    background-color: var(--section-bg); /* Fundo igual à seção */
+    color: var(--text-color); /* Cor do texto igual ao padrão */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 label {
-  display: block;
-  margin-bottom: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    display: block; /* Mantém o label em sua própria linha */
+    /* Removido margin-bottom aqui porque o gap do .controls já cuida do espaçamento */
+    margin-right: 5px; /* Pequeno espaçamento entre label e select/input no flex */
+    white-space: nowrap; /* Evita que o label quebre a linha */
 }
 
-input {
-    font-size: 150%;
-    width: 1000px;
-    height: 660px;
-    border: 2px solid #000000;
-    position: relative;
-    margin: 20px;
-    background-color: white;
-    left: auto;
-    top: auto;
+/* Estilo para todos os botões */
+#share-button, #apply-font-button, #save-button {
+    background-color: var(--button-bg); /* Usa a variável CSS */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
+#share-button:hover, #apply-font-button:hover, #save-button:hover {
+    background-color: var(--button-hover-bg); /* Usa a variável CSS */
+}
+
+/* Estilos do Rodapé */
+footer {
+    background-color: var(--footer-bg); /* Usa a variável CSS */
+    color: var(--footer-text-color); /* Usa a variável CSS */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+/* Novo estilo para o grupo de botões */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* Media Queries para Responsividade (ajustes para telas menores) */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    .controls {
+        justify-content: center; /* Centraliza os controles em telas menores */
+    }
+
+    #theme-toggle {
+        position: static; /* Volta à posição normal em telas pequenas */
+        margin-top: 10px; /* Adiciona margem se ficar abaixo do título */
+        transform: none; /* Remove a centralização vertical */
+    }
+}

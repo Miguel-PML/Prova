@@ -175,6 +175,17 @@ body {
     margin: 0 auto;
 }
 
+.card1 {
+    background-image: url(../IMG/PequenoPrincipe.jpg);
+    background-size: cover; /* Faz a imagem cobrir todo o card */
+    background-position: center; /* Centraliza a imagem no card */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    border-radius: 10px;
+    min-height: 200px; /* Garante uma altura mínima para ver a imagem */
+    width: 100%;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+}
 .card {
     background-color: var(--card-bg); /* Usa a variável */
     border-radius: 10px;
