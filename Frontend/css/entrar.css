@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #caixa {
       width: 600px;
             height: auto; /* Alterado para auto para se ajustar ao conteúdo */
@@ -136,4 +137,144 @@
         input, button {
             max-width: 250px;
         }
+=======
+#caixa {
+      width: 600px;
+            height: auto; /* Alterado para auto para se ajustar ao conteúdo */
+            border: 2px solid #ffffff;
+            position: relative;
+            margin: 20px auto; /* Centraliza a caixa horizontalmente */
+            background-color: rgb(33, 38, 59);
+            /* left: 400px; Removido, centralizado com margin: auto */
+            top: 80px;
+            padding: 20px; /* Adicionado padding interno */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+            display: flex; /* Para flex-box com o formulário */
+            flex-direction: column; /* Organiza os itens em coluna */
+            align-items: center; /* Centraliza itens horizontalmente */
+            gap: 15px; /* Espaçamento entre os elementos */
+}
+
+    input {
+        /* left: 60px; Removido, input terá 100% da largura do seu container */
+        width: 100%; /* Ocupa a largura total do container */
+        max-width: 260px; /* Limita a largura máxima */
+        height: 40px;
+        border: 3px solid #000000;
+        /* position: relative; */ /* Removido, não é necessário com display flex */
+        margin: 6px 0; /* Ajustado para espaçamento vertical */
+        background-color: rgb(0, 0, 0);
+        border-radius: 20px;
+        text-align: center;
+        color: azure;
+        box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+    }
+    input:focus {
+        outline: none;
+        border-color: blueviolet; /* Mude a cor da borda ao focar */
+        box-shadow: 0 0 8px blueviolet; /* Adicione uma sombra ao focar */
+    }
+
+     body{
+        background-image:url(../IMG/fumaça2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    }
+    h1{
+        position: relative;
+        left: 0; /* Removido o left fixo, centralizado pelo body ou por text-align */
+        top: 40px;
+        color: white;
+        text-align: center; /* Centraliza o título */
+        margin-bottom: 20px; /* Espaçamento abaixo do título */
+    }
+
+    h2{
+        color: white;
+        position: relative;
+        left: 0; /* Removido o left fixo, alinhado pelo flex-box */
+        margin-bottom: 5px; /* Espaçamento menor para o label */
+    }
+    
+    ul{
+        text-decoration-line: none;
+        list-style-type: none;
+        overflow: hidden;
+        zoom: 100%; /* Ajustado para 100% para evitar problemas de zoom */
+        padding: 0; /* Remove padding padrão da ul */
+        margin: 0; /* Remove margem padrão da ul */
+    }
+
+    button{
+        background-color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        margin-top: 20px;
+        color: azure;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        position: static; /* Alterado para static para fluir no flex-box */
+        /* left: 92px; Removido */
+        /* top: 125px; Removido */
+        width: 100%; /* Ocupa a largura total do container */
+        max-width: 260px; /* Limita a largura máxima */
+    }
+
+    button:hover{
+        background-color: blueviolet;
+    }
+
+    /* Estilo para a mensagem de login (erro/sucesso) */
+    .message {
+        color: yellow; /* Cor padrão para mensagens */
+        font-size: 0.9rem;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .message.error {
+        color: #dc3545; /* Vermelho para erro */
+    }
+
+    .message.success {
+        color: #28a745; /* Verde para sucesso */
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        #caixa {
+            width: 90%; /* Aumenta a largura em telas menores */
+            margin-left: auto;
+            margin-right: auto;
+            left: auto; /* Garante que não haja left fixo */
+        }
+        h1 {
+            font-size: 2rem; /* Ajusta o tamanho do título */
+            top: 20px;
+        }
+        input, button {
+            width: 90%; /* Inputs e botões ocupam mais espaço */
+            max-width: 300px; /* Aumenta o max-width */
+            margin: 8px auto; /* Centraliza */
+        }
+        h2 {
+            text-align: center; /* Centraliza o label também */
+        }
+    }
+
+    @media (max-width: 480px) {
+        #caixa {
+            padding: 15px;
+            top: 50px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            top: 15px;
+        }
+        input, button {
+            max-width: 250px;
+        }
+>>>>>>> 21fc7ea20d00a27cb6667d4ce0582642e3d2240c
     }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -55,4 +56,63 @@
     </main>
 
     <script src="teste conta.js"></script> </body>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Conta - HistóriArte</title>
+    <link rel="stylesheet" href="teste inicio.css"> <link rel="stylesheet" href="teste conta.css"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <header class="main-header">
+        <nav class="nav-links">
+            <a href="teste inicio.html" class="nav-item">Início</a>
+            <a href="teste criar.html" class="nav-item">Criar</a>
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar...">
+                <button type="submit" class="search-icon"><i class="material-icons">search</i></button>
+            </div>
+            <a href="teste ajuda.html" class="nav-item">Ajuda</a>
+            <a href="teste conta.html" class="nav-item">Conta</a>
+            <button id="theme-toggle" class="theme-toggle-button">
+                <i class="material-icons">light_mode</i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="content-section">
+        <section class="account-form-section">
+            <h1>Modificar Sua Conta</h1>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="username">Nome de Usuário:</label>
+                    <input type="text" id="username" name="username" value="NomeDeUsuarioAtual" placeholder="Seu nome de usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="seu.email@exemplo.com" placeholder="Seu endereço de email" required>
+                </div>
+                <div class="form-group">
+                    <label for="old-password">Senha Atual:</label>
+                    <input type="password" id="old-password" name="old_password" placeholder="Digite sua senha atual">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Nova Senha (opcional):</label>
+                    <input type="password" id="new-password" name="new_password" placeholder="Deixe em branco para não alterar">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirme Nova Senha:</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirme sua nova senha">
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="save-button">Salvar Alterações</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="teste conta.js"></script> </body>
+>>>>>>> 21fc7ea20d00a27cb6667d4ce0582642e3d2240c
 </html>
