@@ -1,0 +1,14 @@
+[
+    {
+        "Nome_produto": "arroz",
+        "Quantidade": 3,
+        "Preco": 37.0,
+        "Tem_estoque": true
+    },
+    {
+        "Nome_produto": "feij\u00e3o",
+        "Quantidade": 3,
+        "Preco": 18.0,
+        "Tem_estoque": true
+    }
+]
