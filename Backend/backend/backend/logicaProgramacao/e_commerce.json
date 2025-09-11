@@ -1,0 +1,16 @@
+{
+    "categorias": [
+        {
+            "id_categoria": 1,
+            "nome_categoria": "terror"
+        }
+    ],
+    "produtos": [
+        {
+            "id_produto": 1,
+            "nome_produto": "it",
+            "preco": 45,
+            "id_categoria_associado": 1
+        }
+    ]
+}
