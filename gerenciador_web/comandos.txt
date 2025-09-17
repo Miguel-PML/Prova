@@ -1,2 +1,13 @@
+startproject -> Projeto novo
+startapp -> Pequenos aplicativos/ funcionalidades
+
+Códigos:
 C:\Users\Aluno\AppData\Roaming\Python\Python313\Scripts\django-admin startproject backend
+
+python -m django startproject config
+
 python manage.py startapp tarefas
+
+python manage.py makemigrations
+
+python manage.py migrate
