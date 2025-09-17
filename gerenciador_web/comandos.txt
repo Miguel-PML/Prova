@@ -1,0 +1,2 @@
+C:\Users\Aluno\AppData\Roaming\Python\Python313\Scripts\django-admin startproject backend
+python manage.py startapp tarefas
