@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 div{
     position: absolute;
     top: 0.5cm;
@@ -59,66 +58,4 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-=======
-div{
-    position: absolute;
-    top: 0.5cm;
-    left: 60px;
-    zoom: 180%;
-    padding: 10px;
-    width: 500px;
-    word-spacing: 0px;
-    text-align: justify;
-    text-shadow: 2px 2px rgb(34, 111, 178);
-    word-wrap: break-word;
-}
-
-img{
-  position: relative;
-  left: 21cm;
-  top: 80px;
-}
-
-ul{
-    list-style-type: none;
-    overflow: hidden;
-    zoom: 200%;
-}
-
-li{
-    float: left;
-}
-
- li.a a{
-    background-color: rgb(255, 255, 255);
-    display: block;
-    color: rgb(0, 0, 0);
-    padding: 10px 26px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    position: absolute;
-    top: 270px;
-    left: 160px;
-  }
-
-  li.b a{
-    background-color: black;
-    display: block;
-    color: white;
-    padding: 10px 26px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    position: absolute;
-    top: 270px;
-    left: 60px;
-  }
-
-body{
-    background-image:url(../IMG/fumaça2.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
->>>>>>> 21fc7ea20d00a27cb6667d4ce0582642e3d2240c
 }

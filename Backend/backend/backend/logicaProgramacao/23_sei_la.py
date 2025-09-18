@@ -12,7 +12,7 @@ estoque = []
 
 def mostrar_menu():
     """Imprime o menu principal da loja."""
-    print("        ----Moya’s imports----")
+    print("----Moya’s imports----")
     print("----Sistema de Controle de Estoque----")
     print("1. Cadastrar Veículo")
     print("2. Listar Veículos")

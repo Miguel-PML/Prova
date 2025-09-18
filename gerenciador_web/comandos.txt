@@ -1,5 +1,8 @@
 startproject -> Projeto novo
 startapp -> Pequenos aplicativos/ funcionalidades
+makemigrations -> 
+migrate ->
+runserver -> Rodar o Projeto
 
 Códigos:
 C:\Users\Aluno\AppData\Roaming\Python\Python313\Scripts\django-admin startproject backend
@@ -11,3 +14,5 @@ python manage.py startapp tarefas
 python manage.py makemigrations
 
 python manage.py migrate
+
+python manage.py runserver

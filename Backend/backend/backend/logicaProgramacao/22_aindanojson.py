@@ -85,7 +85,8 @@ with open(nome_arquivo, "r") as arquivo:
 
 with open(nome_arquivo, "w") as arquivo:
             json.dump(livro, arquivo, indent=4)
-
+"""
+"""
 with open(nome_arquivo, "r") as arquivo:
             livro_para_excluir = int(input("Digite o ID do produto: "))
             livro = json.load(arquivo)
