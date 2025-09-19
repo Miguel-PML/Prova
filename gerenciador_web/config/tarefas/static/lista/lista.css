@@ -1,0 +1,59 @@
+/* CORREÇÃO: Removido o ponto. Estamos estilizando a tag <body> e não uma classe. */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* CORREÇÃO: Removido o ponto. Estamos estilizando a tag <h1> e não uma classe. */
+h1 {
+    color: #444;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tarefa {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tarefa h2 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.tarefa p {
+    line-height: 1.6;
+}
+
+.tarefa small {
+    color: #777;
+    font-style: italic;
+}
+
+.tarefa.concluida {
+    background-color: #e9f5e9;
+    opacity: 0.7;
+}
+
+.tarefa.concluida h2 {
+    text-decoration: line-through;
+    color: #555;
+}
+
+/* CORREÇÃO: Removido os pontos e o espaço. 
+   Isso estiliza a tag <a> que está dentro de uma tag <p>. */
+p a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
