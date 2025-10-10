@@ -1,59 +1,189 @@
-/* CORREÇÃO: Removido o ponto. Estamos estilizando a tag <body> e não uma classe. */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 20px;
+/* Definição de Variáveis CSS (Custom Properties) */
+/* Paleta: Deep Ocean & Clean Slate */
+:root {
+    /* Cores de Fundo e Containers */
+    --cor-fundo-app: #F0F4F8; /* Fundo da página (Azul/Cinza claro) */
+    --cor-fundo-container: #FFFFFF; /* Fundo da caixa principal (Branco) */
+    --cor-borda-container: #E0E7EB; /* Borda da caixa principal */
+    
+    /* Cores de Texto e Ícones */
+    --cor-texto-principal: #1E2B38; /* Cinza escuro profundo */
+    --cor-texto-secundario: #6B7280; /* Cinza médio */
+    --cor-borda-card: #E5E7EB; /* Borda sutil dos cards */
+
+    /* Cores de Ação e Destaque */
+    --cor-principal: #034F84; /* Azul Profundo (Botões, Títulos, Barra lateral ativa) */
+    --cor-secundaria: #2A6F97; /* Azul Marinho Sutil (Hover) */
+    
+    /* Cores de Status */
+    --cor-sucesso: #10B981; /* Verde Vibrante para Concluído */
+    --cor-fundo-concluida: #ECFDF5; /* Verde Menta muito claro */
 }
 
-/* CORREÇÃO: Removido o ponto. Estamos estilizando a tag <h1> e não uma classe. */
+/* 1. Estrutura Base (body) - Centraliza o "App" */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo-app);
+    color: var(--cor-texto-principal);
+    margin: 0; 
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* 2. Container Principal (Simulando a caixa do App) */
+/* Como você não tem um <div>.container no HTML, vamos estilizar o <body> para que ele se comporte como um container centralizado. */
+body {
+    /* As propriedades acima já fazem o body funcionar como container */
+    max-width: 800px;
+    background-color: var(--cor-fundo-container);
+    border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--cor-borda-container);
+    padding: 40px; 
+    margin-left: 350px;
+    margin-right: 350px;
+    /* Remove a centralização flexbox para que o body seja o limite */
+    display: block; 
+}
+
+
+/* 3. Estilo do Título Principal e Linha Divisória */
 h1 {
-    color: #444;
+    color: var(--cor-principal);
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px; 
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--cor-borda-container);
+    margin-top: 0;
     margin-bottom: 30px;
 }
 
-.tarefa {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tarefa h2 {
-    margin-top: 0;
-    color: #0056b3;
-}
-
-.tarefa p {
-    line-height: 1.6;
-}
-
-.tarefa small {
-    color: #777;
-    font-style: italic;
-}
-
-.tarefa.concluida {
-    background-color: #e9f5e9;
-    opacity: 0.7;
-}
-
-.tarefa.concluida h2 {
-    text-decoration: line-through;
-    color: #555;
-}
-
-/* CORREÇÃO: Removido os pontos e o espaço. 
-   Isso estiliza a tag <a> que está dentro de uma tag <p>. */
-p a {
-    color: #007BFF;
+/* 4. Estilo do Botão "+ Adicionar Tarefa" (tag <a>) */
+body > a { /* Seleciona o link direto no body */
+    /* Estilo de botão .btn-acao adaptado para <a> */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cor-principal);
+    color: white;
     text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.1s;
+    margin-bottom: 20px;
+    border: none;
 }
 
-p a:hover {
+body > a strong {
+    font-weight: 700;
+}
+
+body > a:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-1px);
+}
+
+body > a:active {
+    transform: translateY(0);
+}
+
+
+/* 5. Estilo da Tarefa (Os cards internos) */
+/* O seu HTML usa a classe .tarefas, então vamos estilizar ela! */
+.tarefas {
+    background-color: var(--cor-fundo-container);
+    border: 1px solid var(--cor-borda-card);
+    border-left: 6px solid var(--cor-principal); /* Barra lateral de destaque */
+    border-radius: 10px; 
+    padding: 20px;
+    margin-bottom: 18px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out; 
+}
+
+.tarefas:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. Título da Tarefa (H2 e o link) */
+.tarefas h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.tarefas h2 a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.tarefas h2 a:hover {
+    color: var(--cor-secundaria);
     text-decoration: underline;
+}
+
+/* 7. Descrição e Data */
+.tarefas p {
+    line-height: 1.65;
+    color: var(--cor-texto-principal);
+    margin-bottom: 5px;
+}
+
+.tarefas small {
+    color: var(--cor-texto-secundario);
+    font-style: italic;
+    display: block; 
+    margin-top: 15px;
+    border-top: 1px dashed var(--cor-borda-card); 
+    padding-top: 8px;
+    font-size: 0.85em;
+}
+
+
+/* 8. Estilo de Tarefa Concluída */
+.tarefas.concluida {
+    background-color: var(--cor-fundo-concluida);
+    border-left-color: var(--cor-sucesso); /* Verde vibrante */
+    opacity: 0.85;
+    pointer-events: none;
+    box-shadow: none;
+    transform: none; 
+}
+
+.tarefas.concluida h2 a {
+    text-decoration: line-through;
+    color: var(--cor-texto-secundario);
+}
+
+.tarefas.concluida p, .tarefas.concluida small {
+    color: #999;
+}
+
+/* 9. Estilo para "Nenhuma tarefa cadastrada" */
+body > p {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--cor-fundo-concluida);
+    border: 1px solid var(--cor-borda-card);
+    border-radius: 8px;
+    color: var(--cor-texto-secundario);
+    font-style: italic;
+    margin-top: 30px;
+}
+
+body > p a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 600;
 }

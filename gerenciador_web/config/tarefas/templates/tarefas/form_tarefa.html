@@ -1,8 +1,10 @@
 <!DOCTYPE html> 
 <html lang="pt-br"> 
 <head> 
+    {% load static %}
     <meta charset="UTF-8"> 
     <title>{% if tarefa %}Alterar Tarefa{% else %}Adicionar Tarefa{% endif %}</title> 
+     <link rel="stylesheet" href="{% static 'lista/form_tarefa.css' %}">
 </head> 
 <body> 
     <h1>{% if tarefa %}Alterar Tarefa{% else %}Adicionar Nova Tarefa{% endif %}</h1> 

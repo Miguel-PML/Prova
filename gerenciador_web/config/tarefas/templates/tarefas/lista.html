@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha lista de tarefas</title>
+    <title>Minha Lista de tarefas</title>
     <link rel="stylesheet" href="{% static 'lista/lista.css' %}">
 </head>
 <body>
-    <h1>Gerenciador de Tarefas Web</h1>
 
-    {% for tarefa in minhas_tarefas %}
-        <div class="tarefa {% if tarefa.concluida %}concluida{% endif %}">
+    <h1>Gerenciador de tarefas web</h1>
+    
+    <a href = "{% url 'adicionar_tarefa' %}"><strong>+ Adicionar Tarefa </strong></a>
+    <hr >
+
+
+    {% for tarefa in minhas_tarefas %}     
+        <div class="tarefas {% if tarefa.concluida %}concluida{% endif %}">
             <h2><a href="{% url 'detalhe_tarefa' tarefa.id %}">{{ tarefa.titulo }}</a></h2>
             <p>{{ tarefa.descricao }}</p>
             <small>Criada em: {{ tarefa.data_criacao }}</small>
         </div>
     {% empty %}
-        <p>Nenhuma tarefa cadastrada ainda. Adicione algumas no <a href="/admin/">Admin</a>!</p>
+        <p>Nenhuma tarefa cadastrada ainda. Adicione algumas no <a href="/admin/">admin</a>!</p>
     {% endfor %}
 </body>
 </html>

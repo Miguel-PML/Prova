@@ -1,0 +1,115 @@
+/* ======================================================= */
+/* 1. Variáveis CSS (Consistência com o App) */
+/* ======================================================= */
+:root {
+    /* Cores de Fundo e Containers */
+    --cor-fundo-app: #F0F4F8; 
+    --cor-fundo-container: #FFFFFF;
+    --cor-borda-container: #E0E7EB; 
+    
+    /* Cores de Texto */
+    --cor-texto-principal: #1E2B38;
+    --cor-texto-secundario: #6B7280;
+
+    /* Cores de Ação e Alerta */
+    --cor-principal: #034F84; /* Azul (Usado para Cancelar) */
+    --cor-secundaria: #2A6F97; 
+    --cor-alerta: #DC3545; /* Vermelho forte (Excluir) */
+    --cor-alerta-hover: #C82333; /* Vermelho mais escuro no hover */
+}
+
+/* ======================================================= */
+/* 2. Estrutura Base e Centralização */
+/* ======================================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo-app);
+    color: var(--cor-texto-principal);
+
+}
+
+/* Container Principal (Aplicado ao <body>, estilizado como uma caixa) */
+body {
+    max-width: 550px; /* Caixa menor para foco total */
+    background-color: var(--cor-fundo-container);
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--cor-borda-container);
+    padding: 40px; 
+    margin-left: 400px;
+    margin-right: 350px;
+    /* Garante que o conteúdo interno flua */
+    display: block; 
+    text-align: center;
+}
+
+/* ======================================================= */
+/* 3. Título e Texto de Alerta */
+/* ======================================================= */
+h1 {
+    color: var(--cor-alerta); /* Cor de alerta para o título */
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cor-borda-container);
+}
+
+p {
+    color: var(--cor-texto-secundario);
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* ======================================================= */
+/* 4. Estilo do Formulário e Botões */
+/* ======================================================= */
+form {
+    display: flex;
+    justify-content: center; /* Centraliza botões horizontalmente */
+    gap: 20px; /* Espaço entre os botões */
+    margin-top: 40px;
+}
+
+/* Botão principal (Excluir) - ALERTA */
+button[type="submit"] {
+    /* Estilo de botão */
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s;
+    
+    /* Cores */
+    background-color: var(--cor-alerta);
+    color: white;
+    border: 2px solid var(--cor-alerta);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--cor-alerta-hover);
+    border-color: var(--cor-alerta-hover);
+    transform: translateY(-1px);
+}
+
+/* Link Secundário (Cancelar) - NEUTRO */
+form a {
+    /* Estilo de link como botão */
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    /* Cores */
+    background-color: var(--cor-borda-container);
+    color: var(--cor-texto-principal);
+    border: 2px solid var(--cor-borda-container);
+}
+
+form a:hover {
+    background-color: #D3DBE3; /* Cinza mais escuro no hover */
+    color: var(--cor-texto-principal);
+}

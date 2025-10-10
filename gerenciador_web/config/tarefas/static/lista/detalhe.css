@@ -1,0 +1,210 @@
+/* ======================================================= */
+/* 1. Variáveis CSS (Paleta de Cores Consistente) */
+/* ======================================================= */
+:root {
+    /* Cores de Fundo e Containers */
+    --cor-fundo-app: #F0F4F8; /* Fundo da página (Azul/Cinza claro) */
+    --cor-fundo-container: #FFFFFF; /* Fundo da caixa principal (Branco) */
+    --cor-borda-container: #E0E7EB; /* Borda da caixa principal */
+    
+    /* Cores de Texto e Ícones */
+    --cor-texto-principal: #1E2B38;
+    --cor-texto-secundario: #6B7280;
+
+    /* Cores de Ação e Destaque */
+    --cor-principal: #034F84; /* Azul Profundo */
+    --cor-secundaria: #2A6F97; /* Azul Marinho Sutil (Hover) */
+    
+    /* Cores de Status e Ação */
+    --cor-sucesso: #10B981; /* Verde - Concluído */
+    --cor-alerta: #DC3545; /* Vermelho - Excluir */
+}
+
+/* ======================================================= */
+/* 2. Estrutura Base e Centralização do Container */
+/* ======================================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo-app);
+    color: var(--cor-texto-principal);
+    margin: 0; 
+    padding: 0; 
+    
+    /* Centralização Flexbox para a página inteira */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    width: 100vw; 
+}
+
+/* Container Principal (Aplicado ao <body>, estilizado como uma caixa) */
+body {
+    max-width: 700px;
+    background-color: var(--cor-fundo-container);
+    border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--cor-borda-container);
+    padding: 40px; 
+    margin-left: 350px;
+    margin-right: 350px; 
+    /* Garante que o conteúdo interno flua corretamente */
+    display: block; 
+}
+
+/* ======================================================= */
+/* 3. Título e Corpo do Detalhe */
+/* ======================================================= */
+.h1-titulo {
+    color: var(--cor-principal);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px; 
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid var(--cor-borda-container);
+    padding-bottom: 15px;
+}
+
+/* Estilização dos parágrafos de detalhe */
+body > p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-left: 4px solid var(--cor-borda-container);
+    padding-left: 15px;
+}
+
+/* Negrito para os rótulos (Descrição, Status) */
+body > p strong {
+    color: var(--cor-principal);
+    font-weight: 700;
+    display: block; 
+    font-size: 0.9em;
+}
+
+/* Destaque para o status Pendente/Concluído (requer envolver o texto com <span> no HTML) */
+.status-pendente {
+    color: var(--cor-alerta);
+    font-weight: 700;
+}
+
+.status-concluido {
+    color: var(--cor-sucesso);
+    font-weight: 700;
+}
+
+/* Data de criação */
+small {
+    display: block;
+    color: var(--cor-texto-secundario);
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--cor-borda-container);
+    margin: 30px 0;
+}
+
+/* ======================================================= */
+/* 4. Estilo de Botões e Links de Ação */
+/* ======================================================= */
+/* O texto "Voltar para lista" que não é um link será escondido para usar apenas o botão estilizado */
+body > a:nth-of-type(2):not([href]) {
+    display: none;
+}
+
+/* Container que deve envolver os links no HTML (div class="action-buttons") */
+.action-buttons {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+/* Estilo Base do Botão */
+.action-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-align: center;
+    flex-grow: 1; 
+    min-width: 150px;
+}
+
+/* Botão 1: Alterar Tarefa (Primário) */
+a[href*="alterar_tarefa"] {
+    background-color: var(--cor-principal);
+    color: white;
+    border: 2px solid var(--cor-principal);
+}
+
+a[href*="alterar_tarefa"]:hover {
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+}
+
+/* Botão 2: Excluir Tarefa (Alerta/Secundário) */
+a[href*="excluir_tarefa"] {
+    background-color: transparent;
+    color: var(--cor-alerta);
+    border: 2px solid var(--cor-alerta);
+}
+
+a[href*="excluir_tarefa"]:hover {
+    background-color: var(--cor-alerta);
+    color: white;
+}
+
+/* Botão 3: Voltar para Lista (Neutro) */
+a[href*="lista_tarefas"] {
+    background-color: var(--cor-borda-container);
+    color: var(--cor-texto-principal);
+    border: 2px solid var(--cor-borda-container);
+}
+
+a[href*="lista_tarefas"]:hover {
+    background-color: #D3DBE3; 
+}
+
+.a-excluir {
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: red;
+    color: #FFFFFF;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.a-alterar {
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: goldenrod;
+    color: #FFFFFF;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.a-lista {
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: blue;
+    color: #FFFFFF;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 10px;
+}
