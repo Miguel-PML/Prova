@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 
+from projetos.models import Projeto
+
 # Create your views here.
 
 from .models import Tarefa
@@ -43,13 +45,16 @@ def detalhe_tarefa (request, tarefa_id):
     return render(request, 'tarefas/lista.html', contexto)
 
 def adicionar_tarefa(request):
+    projetos= Projeto.objects.all()
     if request.method == 'POST':
         titulo = request.POST.get('titulo')
         descricao = request.POST.get('descricao')
-        Tarefa.objects.create(titulo=titulo,descricao=descricao)
+        projeto_id = request.POST.get('projeto') #Pega o id do projeto selecionado
+        projeto_selecionado = Projeto.objects.get(pk = projeto_id)
+        Tarefa.objects.create(titulo=titulo,descricao=descricao,projeto=projeto_selecionado)
         return redirect('lista_tarefas')
 
-    return render(request,'tarefas/form_tarefa.html')
+    return render(request,'tarefas/form_tarefa.html', {'projetos': projetos})
 
 #me fodos http
 #POST: envia dados para o servidor
@@ -59,6 +64,7 @@ def adicionar_tarefa(request):
 
 
 def alterar_tarefa(request, tarefa_id):
+    projetos= Projeto.objects.all()
     tarefa = get_object_or_404(Tarefa, pk=tarefa_id)
     
     if request.method == 'POST':
@@ -67,10 +73,12 @@ def alterar_tarefa(request, tarefa_id):
         projeto_id = request.POST.get('projeto')
         concluida = request.POST.get('concluido') == 'on' 
 
+        projeto_selecionado = get_object_or_404(Projeto, pk=projeto_id)
       
         tarefa.titulo = titulo
         tarefa.descricao = descricao
         tarefa.concluido = concluida
+        tarefa.projeto = projeto_selecionado
         
         tarefa.save()
         
@@ -78,6 +86,7 @@ def alterar_tarefa(request, tarefa_id):
 
     context = {
         'tarefa': tarefa,
+        'projetos': projetos,
     }
     return render(request, 'tarefas/form_tarefa.html', context)
 
